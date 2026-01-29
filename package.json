@@ -7,7 +7,10 @@
     "start": "node src/index.js",
     "dev": "nodemon --watch src --exec \"node src/index.js\"",
     "lint": "eslint . --ext .js",
-    "test": "jest --runInBand --detectOpenHandles"
+    "test": "jest --runInBand --detectOpenHandles",
+    "migrate": "npx knex migrate:latest",
+    "migrate:rollback": "npx knex migrate:rollback",
+    "seed": "npx knex seed:run"
   },
   "keywords": [],
   "author": "",
