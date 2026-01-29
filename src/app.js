@@ -6,18 +6,18 @@ dotenv.config();
 
 const app = express();
 
+// middlewares
 app.use(cors());
 app.use(express.json());
+app.use(require('./middlewares/requestLogger'));
 
 const routes = require('./routes');
 app.use('/api', routes);
 
-app.get('/health', (req, res) => res.json({ ok: true }));
+// 404
+app.use(require('./middlewares/notFound'));
 
 // Error handler
-app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(err.status || 500).json({ error: err.message || 'Internal Server Error' });
-});
+app.use(require('./middlewares/errorHandler'));
 
 module.exports = app;
