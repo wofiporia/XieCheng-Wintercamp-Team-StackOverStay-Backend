@@ -9,6 +9,4 @@ router.get('/', (req, res) => {
 
 router.get('/health', healthController.ping);
 
-router.use('/hotels', require('./hotels'));
-
 module.exports = router;
