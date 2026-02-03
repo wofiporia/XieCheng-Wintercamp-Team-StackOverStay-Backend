@@ -1,20 +1,36 @@
-# XieCheng-Wintercamp-Team-StackOverStay-Backend
+# StackOverStay Backend
 
-Node.js + Express backend scaffold for the Wintercamp project.
+StackOverStay 酒店预订平台后端服务 (Node.js + Express + PostgreSQL)。
 
-Quick start
+## 项目概览
 
-1. Install dependencies: `npm install`
-2. Start dev server: `npm run dev`
-3. Run tests: `npm test`
+详细的项目文档、快速启动指南、API 文档和目录结构说明，请参阅：
 
-Structure
+👉 [**PROJECT_OVERVIEW.md**](docs/PROJECT_OVERVIEW.md)
 
-- `src/` - application source
-- `tests/` - unit/integration tests
-- `Dockerfile`, `docker-compose.yml` - optional container setup
+## 快速开始
 
-Contributing
+```bash
+# 安装依赖
+npm install
 
-- Please follow the existing code style and run `npm run lint` before opening PRs.
+# 启动数据库 (Docker)
+docker-compose up -d
 
+# 初始化数据库
+npm run migrate
+npm run seed
+
+# 启动服务
+npm run dev
+```
+
+## 测试
+
+```bash
+# 运行 API 冒烟测试
+npm run test:api
+
+# 运行单元/集成测试
+npm test
+```
