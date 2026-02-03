@@ -4,7 +4,13 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpecs = require('./config/swagger');
+
 const app = express();
+
+// Swagger Documentation
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 // middlewares
 app.use(cors());
